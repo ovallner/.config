@@ -9,6 +9,8 @@ require('mason-lspconfig').setup({
     },
 })
 
+lsp.preset('recommended')
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -18,6 +20,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-Space>'] = cmp.mapping.complete(),
 })
 
-lsp.preset('recommended')
+
+lsp.on_attach(function(client, bufnr)
+    local opts = {buffer = bufner, remap = false}
+
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+end)
 
 lsp.setup()

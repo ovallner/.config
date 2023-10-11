@@ -49,4 +49,8 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  use('freddiehaddad/feline.nvim')
+  use('nvim-tree/nvim-web-devicons')
+  use('lewis6991/gitsigns.nvim')
+
 end)

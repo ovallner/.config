@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Electron/
 dconf/
 discord/
@@ -16,3 +17,5 @@ monitors.xml~
 user-dirs.dirs
 user-dirs.locale
 .gsd-keyboard.settings-ported
+nvim/plugin/*
+.DS_Store

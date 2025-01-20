@@ -1,4 +1,4 @@
-require('gitsigns').setup()
+#require('gitsigns').setup()
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)

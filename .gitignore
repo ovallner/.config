@@ -1,4 +1,6 @@
 Electron/
+enchant/
+systemd/
 dconf/
 discord/
 evolution/

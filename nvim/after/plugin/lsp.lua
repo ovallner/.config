@@ -27,6 +27,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', '<F1>', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
   end,
 })
 
@@ -34,6 +35,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- servers you have installed in your system
 require('lspconfig').gleam.setup({})
 require('lspconfig').rust_analyzer.setup({})
+require('lspconfig').pyright.setup({})
+require('lspconfig').pylsp.setup({})
 
 local cmp = require('cmp')
 
@@ -56,7 +59,8 @@ require('mason-lspconfig').setup({
   -- with the ones you want to install
   ensure_installed = {
     'lua_ls',
-    'pyright'
+    'pyright',
+    'pylsp'
   },
   handlers = {
     function(server_name)

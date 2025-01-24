@@ -31,6 +31,10 @@ require('pckr').add{
   'nvim-tree/nvim-web-devicons';
   'lewis6991/gitsigns.nvim';
   'APZelos/blamer.nvim';
+  'folke/which-key.nvim';
+  -- color theme
+  'catppuccin/nvim';
+  'marko-cerovac/material.nvim';
 
 
   -- Use specific branch, dependency and run lua file after load
@@ -49,32 +53,34 @@ require('pckr').add{
       {'nvim-lua/plenary.nvim'}
     }
   };
+  --[[
   {'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     requires = {
       {'nvim-lua/plenary.nvim'}
     }
   };
+  ]]
 
-  -- Also run code after load (see the "config" key)
-  {'rebelot/kanagawa.nvim',
-    config = function()
-      vim.cmd('colorscheme kanagawa')
-    end
-  };
 
   -- Load on specific keymap
   --{'tpope/vim-commentary', cond = keys('n', 'gc') },
 
-
-  {'neovim/nvim-lspconfig'};
-  {'hrsh7th/cmp-nvim-lsp'};
-  {'hrsh7th/nvim-cmp'};
   {'williamboman/mason.nvim'};
   {'williamboman/mason-lspconfig.nvim'};
 
+  {'neovim/nvim-lspconfig'};
+  {'hrsh7th/nvim-cmp'};
+  {'hrsh7th/cmp-buffer'};
+  {'hrsh7th/cmp-path'};
+  {'saadparwaiz1/cmp_luasnip'};
+  {'hrsh7th/cmp-nvim-lsp'};
+  {'hrsh7th/cmp-nvim-lua'};
+  {'rafamadriz/friendly-snippets'};
+
   -- Post-install/update hook with neovim command
   { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' };
+  { 'nvim-treesitter/playground'};
 
   -- Lazy loading:
   -- Load on a specific command
@@ -85,6 +91,11 @@ require('pckr').add{
     }
   };
   ]]
+  {'iamcco/markdown-preview.nvim',
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end
+  }
 
   -- Local plugins can be included
   -- '~/projects/personal/hover.nvim';

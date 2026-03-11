@@ -27,7 +27,7 @@ require('pckr').add{
   'mbbill/undotree';
   'tpope/vim-fugitive';
   'lukas-reineke/indent-blankline.nvim';
-  'freddiehaddad/feline.nvim';
+  --'freddiehaddad/feline.nvim';
   'nvim-tree/nvim-web-devicons';
   'lewis6991/gitsigns.nvim';
   'APZelos/blamer.nvim';
@@ -66,8 +66,8 @@ require('pckr').add{
   -- Load on specific keymap
   --{'tpope/vim-commentary', cond = keys('n', 'gc') },
 
-  {'williamboman/mason.nvim'};
-  {'williamboman/mason-lspconfig.nvim'};
+  {'mason-org/mason.nvim'};
+  {'mason-org/mason-lspconfig.nvim'};
 
   {'neovim/nvim-lspconfig'};
   {'hrsh7th/nvim-cmp'};

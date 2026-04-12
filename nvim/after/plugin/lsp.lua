@@ -1,14 +1,6 @@
 -- Reserve a space in the gutter
 vim.opt.signcolumn = 'yes'
 
--- Add cmp_nvim_lsp capabilities settings to lspconfig
--- This should be executed before you configure any language server
-local lspconfig_defaults = require('lspconfig').util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file
@@ -33,10 +25,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
-require('lspconfig').gleam.setup({})
-require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').pyright.setup({})
-require('lspconfig').pylsp.setup({})
+vim.lsp.enable('gleam')
+--require('lspconfig').gleam.setup({})
+vim.lsp.enable('rust_analyzer')
+--require('lspconfig').rust_analyzer.setup({})
+vim.lsp.enable('pyright')
+--require('lspconfig').pyright.setup({})
+vim.lsp.enable('pylsp')
+--require('lspconfig').pylsp.setup({})
 
 local cmp = require('cmp')
 
@@ -64,7 +60,7 @@ require('mason-lspconfig').setup({
   },
   handlers = {
     function(server_name)
-      require('lspconfig')[server_name].setup({})
+      vim.lsp.enable(server_name)
     end,
   }
 })

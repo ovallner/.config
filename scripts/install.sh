@@ -1,4 +1,7 @@
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ./macos_setup.sh
+fi
 
 # 1. Set Identity Configuration
 # Replace these with your actual info
@@ -27,12 +30,8 @@ echo "Copying agnoster theme modifications for oh-my-zsh..."
 cp ./ext_configs/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
 echo "Done copying agnoster theme\n"
 
-brew install neovim
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
 nvm install 24
-
-brew install python@3.14
 
 curl -fsSL https://opencode.ai/install | bash

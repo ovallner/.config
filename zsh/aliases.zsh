@@ -9,3 +9,5 @@ alias vimconf="cd ~/.config/nvim"
 
 # nvim for vim
 alias python=python3
+
+alias ll="ls -lah"

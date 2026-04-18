@@ -33,6 +33,12 @@ vim.lsp.enable('pyright')
 --require('lspconfig').pyright.setup({})
 vim.lsp.enable('pylsp')
 --require('lspconfig').pylsp.setup({})
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('eslint')
+vim.lsp.enable('html')
+vim.lsp.enable('cssls')
+
+vim.lsp.enable('sqls')
 
 local cmp = require('cmp')
 
@@ -56,7 +62,12 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
     'pyright',
-    'pylsp'
+    'pylsp',
+    'ts_ls',
+    'eslint',
+    'sqls',
+    'html',
+    'cssls'
   },
   handlers = {
     function(server_name)

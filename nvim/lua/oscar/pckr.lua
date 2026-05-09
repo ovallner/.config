@@ -80,7 +80,7 @@ require('pckr').add{
 
   -- Post-install/update hook with neovim command
   { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' };
-  { 'nvim-treesitter/playground'};
+  --{ 'nvim-treesitter/playground'};
 
   -- Lazy loading:
   -- Load on a specific command
